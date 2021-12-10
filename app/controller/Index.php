@@ -82,7 +82,7 @@ class Index
                 $counters->create(
                     ["count" => $count, 'id' => 1],
                     ["count", 'id'],
-                    true·
+                    true
                 );
             }else if ($action == "clear") {
                 Counters::destroy(1);
