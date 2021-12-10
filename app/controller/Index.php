@@ -33,7 +33,7 @@ class Index
 
 
     /**
-     * 获取todo list
+     * 获取当前计数值
      * @return Json
      */
     public function getCount(): Json
@@ -64,8 +64,7 @@ class Index
 
 
     /**
-     * 根据id查询todo数据
-     * @param $action `string` 类型，枚举值，等于 `"inc"` 时，表示计数加一；等于 `"reset"` 时，表示计数重置（清零）
+     * @param $action `string` 类型，枚举值，等于 `"inc"` 时，表示计数加一；等于 `"clear"` 时，表示计数重置（清零）
      * @return Json
      */
     public function updateCount($action): Json
@@ -76,14 +75,14 @@ class Index
                 if ($data == null) {
                     $count = 1;
                 }else {
-                    $count = $data["count"] + 1;
+                    $count = $data["count"] + 2; # 修改单次计数增加值
                 }
     
                 $counters = new Counters;
                 $counters->create(
                     ["count" => $count, 'id' => 1],
                     ["count", 'id'],
-                    true
+                    true·
                 );
             }else if ($action == "clear") {
                 Counters::destroy(1);
