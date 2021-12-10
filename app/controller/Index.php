@@ -75,7 +75,7 @@ class Index
                 if ($data == null) {
                     $count = 1;
                 }else {
-                    $count = $data["count"] + 2; # 修改单次计数增加值
+                    $count = $data["count"] + 1;
                 }
     
                 $counters = new Counters;
