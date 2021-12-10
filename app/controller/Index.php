@@ -75,7 +75,7 @@ class Index
                 if ($data == null) {
                     $count = 1;
                 }else {
-                    $count = $data["count"] + 1;
+                    $count = $data["count"] + 10;
                 }
     
                 $counters = new Counters;
